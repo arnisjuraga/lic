@@ -1,0 +1,7 @@
+2009-08-10
++ pievienota iespēja, "DEVICE" sadaļā pievienojot jaunas iekārtas, norādīt vienādo iekārtu skaitu, tādējādi, ar vienu peles klikšķi pievienojot N vienādas iekārtas :)
+
+
+
+Wishlist:
+- nezin kāpēc, ir ļoti daudz "INsert into device" un "insert into licence" skriptu?! Katrā _actions failā ir pa kādam!!! Vajadzētu iztīrīt!

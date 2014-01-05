@@ -1,0 +1,61 @@
+<?php
+session_start();
+# FileName="Connection_php_mysql.htm"
+# Type="MYSQL"
+# HTTP="true"
+//ini_set('display_errors', 1); ini_set('log_errors', 1); ini_set('error_log', dirname(__FILE__) . '/error_log.txt');error_reporting(E_ALL);
+
+$hostname_db = "127.0.0.1";
+$database_db = "DB_NAME"; 
+$username_db = "USER_NAME"; 
+$password_db = "MYSQL_PASSWORD";
+
+$db = mysql_pconnect($hostname_db, $username_db, $password_db) or trigger_error(mysql_error(),E_USER_ERROR);
+mysql_select_db($database_db, $db);
+mysql_query("SET NAMES 'utf8'");
+
+setlocale(LC_TIME, "lv_LV.utf8");
+
+//Status - LIC un DEVICE
+
+$status[0]="Nav noteikts";
+$status[1]="OK";
+$status[2]="Check LIC";
+$status[3]="Check LIC &amp; grāma.";
+$status[4]="Norakstīt.";
+$status[5]="Arhivēts";
+
+
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+{
+$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+
+$theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+switch ($theType) {
+case "text":
+$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+break;
+case "long":
+case "int":
+$theValue = ($theValue != "") ? intval($theValue) : "NULL";
+break;
+case "double":
+$theValue = ($theValue != "") ? "'" . doubleval($theValue) . "'" : "NULL";
+break;
+case "date":
+$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+break;
+case "defined":
+$theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+break;
+}
+return $theValue;
+}
+}
+
+
+$mlid['device_id']['lv']="dID";
+
+?>
